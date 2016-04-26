@@ -1,0 +1,6 @@
+{
+  "name": "Funkyweatherapp",
+  "tagline": "",
+  "body": "# Funky Weather App\r\n\r\n<!--![action]()-->\r\n<img src=\"./src/screen1.png\" alt=\"alt text\" width=\"250\" height=\"400\">\r\n<img src=\"./src/screen2.png\" alt=\"alt text\" width=\"250\" height=\"400\">\r\n\r\n# Playing around with react native",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
