@@ -4,6 +4,7 @@ var Api = require('./src/api');
 
 var {
   View,
+  Text,
   MapView,
   AppRegistry,
   StyleSheet
@@ -25,10 +26,19 @@ var funkyWeatherApp = React.createClass({
   },
     render: function() {
 
-      return <MapView 
+      return <View style={styles.container}>
+      <MapView 
       annotations={[this.state.pin]}
       onRegionChangeComplete={this.onRegionChangeComplete} 
-      style={styles.map}></MapView>
+      style={styles.map}>
+      </MapView>   
+      <View style={styles.textWrapper}>
+      <Text style={styles.header}>{this.state.city}</Text>
+      <Text style={styles.temp}>{this.state.F}</Text>
+      <Text style={styles.temp}>{this.state.C}</Text>
+      <Text style={styles.description}>{this.state.description}</Text>
+      </View>
+      </View>
     },
     onRegionChangeComplete: function(region) {
       this.setState({
@@ -47,8 +57,33 @@ var funkyWeatherApp = React.createClass({
 
 //styles
 var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    // backgroundColor: ''
+  },
   map: {
-    flex: 1
+    flex: 2,
+    marginTop: 30
+  },
+  textWrapper: {
+    backgroundColor: "#ff1d8e",
+    borderWidth: 3,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header: {
+    fontSize: 38,
+    fontWeight: 'bold'
+  },
+  temp: {
+    fontSize: 20
+  },
+  description: {
+    fontStyle: 'italic',
+    fontSize: 25
   }
 });
 
